@@ -22,6 +22,9 @@ public class Cylinder {
          public void setRadius(radius) {
             this.radius;
         }
+
+        VIRKER IKKE
+
     }
 
 }
