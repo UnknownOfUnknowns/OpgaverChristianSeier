@@ -4,7 +4,7 @@ public class Box {
     private double hight;
     private double width;
     private double depth;
-    private boolean full = true;
+    private boolean full;
 
     public Box(double h, double w, double d) {
         this.hight = h;

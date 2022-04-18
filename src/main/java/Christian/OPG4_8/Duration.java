@@ -41,12 +41,14 @@ public class Duration {
         this.end_minute = em;
     }
 
-    /* public int getLength(){
-        return
+     public int getLength(){
+        if (end_hour < start_hour) {
+            return (24-start_hour + end_hour) * 60 + (start_minute - end_minute);
+        } else return ((end_hour - start_hour) * 60) + (start_minute - end_minute);
     }
-    */
+
     @Override
     public String toString() {
-        return "Duration" + "[" + start_hour + ":" + start_minute + "]" + end_hour + ":" + start_hour + "]";
+        return "Duration" + "[" + start_hour + ":" + start_minute + "," + end_hour + ":" + end_minute + "]";
     }
 }
