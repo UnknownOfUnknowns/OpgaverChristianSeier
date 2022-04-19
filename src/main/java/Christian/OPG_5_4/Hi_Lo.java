@@ -9,7 +9,7 @@ public class Hi_Lo {
 
     public static void main(String[] args) {
 
-        int min = 1, max = 100, tries = 0;
+        int tries = 0;
         String replay;
         Scanner scan = new Scanner(System.in);
         Random generator = new Random();
@@ -36,9 +36,11 @@ public class Hi_Lo {
                 break;
             }
             tries++;
-        } while (quessnum != winningnum);
+        } while (true);
         System.out.println("Do you want another game write replay else write stop:");
-        replay = scan.nextLine();
-    }while (replay == "replay");
+        replay = scan.next();
+        tries = 0;
+        winningnum = generator.nextInt(100)+1;
+    }while (replay.equals("replay"));
     }
 }
