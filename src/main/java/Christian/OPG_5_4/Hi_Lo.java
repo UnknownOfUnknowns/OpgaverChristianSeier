@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 public class Hi_Lo {
 
-    //Funktionen virker ikke med replay, kan ikke indsætte Stop/replay, Scanner bliver ikke kaldt.
-
     public static void main(String[] args) {
 
         int tries = 0;
