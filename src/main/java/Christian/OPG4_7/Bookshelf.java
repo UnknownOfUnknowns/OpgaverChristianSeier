@@ -10,7 +10,7 @@ public class Bookshelf {
         bookArrayList.add(new Book("chssj", "gjhskgn", "0204394"));
 
         for (Book book: bookArrayList) {
-            System.out.println(book.getAuthor());
+            System.out.println(book);
         }
 
     }
