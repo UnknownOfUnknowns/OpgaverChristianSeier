@@ -1,13 +1,13 @@
 package Christian.OPG4_9;
 
+import java.util.ArrayList;
 import java.util.Random;
-// Mangler at lave en metode til sum af 2 terninger. Mangler også en metode til, at roll begge terninger på en gang.
 public class PairOfDice {
 
     private int cubevalue;
 
     public PairOfDice(){
-    this.cubevalue = cubevalue;
+    this.cubevalue = 1;
     }
 
     public int getCubevalue() {
@@ -18,10 +18,18 @@ public class PairOfDice {
         this.cubevalue = cubevalue;
     }
 
-    public void roll() {
+    private int rollonce() {
         Random rand = new Random();
-        cubevalue = rand.nextInt(6)+1;
+        return rand.nextInt(6)+1;
     }
-
+    public ArrayList<Integer> rollpair() {
+        ArrayList<Integer> dices = new ArrayList<Integer>();
+        dices.add(rollonce());
+        dices.add(rollonce());
+        cubevalue = 0;
+        for (Integer dice: dices)
+            cubevalue += dice;
+        return dices;
+    }
 
 }
