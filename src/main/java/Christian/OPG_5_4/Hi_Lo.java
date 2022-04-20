@@ -7,13 +7,20 @@ public class Hi_Lo {
 
     public static void main(String[] args) {
 
-        int tries = 0;
         String replay;
-        Scanner scan = new Scanner(System.in);
+        Scanner scannerReader = new Scanner(System.in);
+    do {
+        playRound(scannerReader);
+        System.out.println("Do you want another game write replay else write stop:");
+        replay = scannerReader.next();
+    }while (replay.equals("replay"));
+    }
+
+    private static void playRound(Scanner scan){
         Random generator = new Random();
         int winningnum = generator.nextInt(100) + 1;
         int quessnum;
-    do {
+        int tries = 0;
         do {
             if (tries == 0) {
                 System.out.println("Guess the random generated number between 1-100");
@@ -35,10 +42,6 @@ public class Hi_Lo {
             }
             tries++;
         } while (true);
-        System.out.println("Do you want another game write replay else write stop:");
-        replay = scan.next();
-        tries = 0;
-        winningnum = generator.nextInt(100)+1;
-    }while (replay.equals("replay"));
+
     }
 }
