@@ -1,15 +1,18 @@
 package Seier.OPG4_7;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 public class Book {
 
     String title;
     String author;
     String publisher;
-    String copyrightdate;
+    LocalDate copyrightdate;
 
     // constructor
 
-    public Book(String title, String author, String publisher, String copyrightdate) {
+    public Book(String title, String author, String publisher, LocalDate copyrightdate) {
         this.title = title;
         this.author = author;
         this.publisher = publisher;
@@ -29,7 +32,7 @@ public class Book {
         return publisher;
     }
 
-    public String getCopyrightdate() {
+    public LocalDate getCopyrightdate() {
         return copyrightdate;
     }
 
@@ -48,7 +51,7 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public void setCopyrightdate(String copyrightdate) {
+    public void setCopyrightdate(LocalDate copyrightdate) {
         this.copyrightdate = copyrightdate;
     }
 
