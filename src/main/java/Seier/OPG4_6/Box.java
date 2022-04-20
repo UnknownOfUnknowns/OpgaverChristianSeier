@@ -8,11 +8,11 @@ public class Box {
     private boolean full;
 
     // constructor
-    public Box(float h, float w, float d){
-    this.height = h;
-    this.width = w;
-    this.depth = d;
-    this.full = false;
+    public Box(float height, float w, float d){
+    this.height = height;
+    width = w;
+    depth = d;
+    full = false;
     }
 
     // Getters
