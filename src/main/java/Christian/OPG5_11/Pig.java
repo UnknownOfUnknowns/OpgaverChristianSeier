@@ -13,60 +13,71 @@ public class Pig {
     PairOfDice die2 = new PairOfDice();
     Scanner playerinput = new Scanner(System.in);
 
-    public void playPig() {
-        while (sumPlayer1 < 100 && sumComputer < 100) {
+   public int getSumComputer() {
+       return sumComputer;
+   }
 
-            int roundPoints = 0;
-            System.out.println("player 1 your turn: press r to roll:");
-            String play1 = playerinput.next();
-            while (true) {
-                if (play1.equals("r")) {
-                    ArrayList<Integer> result = die1.rollpair();
-                    System.out.println("die1: " + result.get(0) + " die2: " + result.get(1));
-                    roundPoints += die1.getCubevalue();
-                    System.out.println("roundpoints: " + roundPoints + " sumplayer1 " + sumPlayer1);
-                    if (die1.getCubevalue() == 2) {
-                        sumPlayer1 = 0;
-                        roundPoints = 0;
-                        break;
-                    } else if (result.contains(1)) {
-                        roundPoints = 0;
-                        break;
-                    } else {
-                        roundPoints += die1.getCubevalue();
-                    }
-                    System.out.print("wanna go again press r else press s:");
-                    play1 = playerinput.next();
-                } else{
+    public int getSumPlayer1() {
+        return sumPlayer1;
+    }
+
+
+    public void playerTaketurn(){
+        while (getSumPlayer1() < 100) {
+        int roundPoints = 0;
+        System.out.println("player 1 your turn: press r to roll:");
+        String play1 = playerinput.next();
+        while (true) {
+            if (play1.equals("r") && sumPlayer1 < 100) {
+                ArrayList<Integer> result = die1.rollpair();
+                System.out.println("die1: " + result.get(0) + " die2: " + result.get(1));
+                roundPoints += die1.getCubevalue();
+                System.out.println("roundpoints: " + roundPoints + " sumplayer1 " + sumPlayer1);
+                if (die1.getCubevalue() == 2) {
+                    sumPlayer1 = 0;
+                    roundPoints = 0;
                     break;
+                } else if (result.contains(1)) {
+                    roundPoints = 0;
+                    break;
+                } else {
+                    roundPoints += die1.getCubevalue();
                 }
+                System.out.print("wanna go again press r else press s:");
+                play1 = playerinput.next();
+            } else {
+                break;
             }
-
-            sumPlayer1 += roundPoints;
+                sumPlayer1 += roundPoints;
             System.out.println("sum" + sumPlayer1);
             roundPoints = 0;
 
-            System.out.println("Now its the computers turn:");
-            while(true){
-                ArrayList<Integer> comresult = die2.rollpair();
-                System.out.println("die1: " + comresult.get(0) + " die2: " + comresult.get(1));
-                roundPoints += die2.getCubevalue();
-                System.out.println("roundpoints: " + roundPoints + " sumcomputer: " + sumComputer);
-                if (die2.getCubevalue() == 2) {
-                    sumComputer = 0;
-                    roundPoints = 0;
-                    break;
-                }
-                if (comresult.contains(1)) {
-                    roundPoints = 0;
-                    break;
-                }
-                if(roundPoints >= 20)
-                    break;
-            }
-
-            sumComputer += roundPoints;
-            System.out.println("sum:" + sumComputer);
         }
+    }
+
+    }
+    public void Computertaketurn() {
+
+        int roundPoints = 0;
+        System.out.println("Now its the computers turn:");
+        while(true){
+            ArrayList<Integer> comresult = die2.rollpair();
+            System.out.println("die1: " + comresult.get(0) + " die2: " + comresult.get(1));
+            roundPoints += die2.getCubevalue();
+            System.out.println("roundpoints: " + roundPoints + " sumcomputer: " + sumComputer);
+            if (die2.getCubevalue() == 2) {
+                sumComputer = 0;
+                roundPoints = 0;
+                break;
+            }
+            if (comresult.contains(1)) {
+                roundPoints = 0;
+                break;
+            }
+            if(roundPoints >= 20 && sumComputer <= 100)
+                break;
+        }
+        sumComputer += roundPoints;
+        System.out.println("sum:" + sumComputer);
     }
 }
