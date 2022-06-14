@@ -15,6 +15,11 @@ public class Account {
         acctNumber = account;
         balance = initial;
     }
+    public Account(String name, long acctNumber) {
+        this.name = name;
+        this.acctNumber = acctNumber;
+        balance = 0;
+    }
 
     public double deposit(double amount) {
         balance = balance + amount;
