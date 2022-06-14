@@ -11,25 +11,23 @@ public class HIGHLOW {
         String replay;
 
         do {
-            spiligen();
+            spiligen(spilscanner);
 
             System.out.println("Vil du spille igen? Y or N");
             replay = spilscanner.next();
 
-                    if (replay.equals("N")){
-                        System.out.println("Tak for spillet. På gensyn.");
-                    }
-
         } while (replay.equals("Y"));
+        System.out.println("Tak for spillet. På gensyn.");
+
     }
 
-    public static void spiligen() {
+    public static void spiligen(Scanner input) {
 
         System.out.println("Indtast et tal");
 
         int tal = (int) (Math.random() * 100 + 1);
 
-        Scanner input = new Scanner(System.in);
+
 
         int talcompare = input.nextInt();
 
