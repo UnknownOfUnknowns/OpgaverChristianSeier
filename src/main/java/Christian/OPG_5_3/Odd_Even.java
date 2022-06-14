@@ -16,12 +16,15 @@ public class Odd_Even {
             num = num / 10;
 
             if(mod % 2 == 0 && mod != 0) {
+                System.out.println("tallet er even");
                 even++;
             }
             if(mod % 2 != 0 && mod != 0) {
+                System.out.println("tallet er ulige");
                 odd++;
             }
             if (mod == 0) {
+                System.out.println("tallet er 0");
                 zero++;
             }
         }
