@@ -33,10 +33,21 @@ public class SalesPerson {
         sale_amount[day] = amount;
     }
 
+    public double getDailyAmount(int day) {
+      return sale_amount[day];
+    }
 
+    public double total() {
+        double weekly_amount = 0;
+        for (int i = 0; i < sale_amount.length; i++) {
+            weekly_amount += sale_amount[i];
+        }
+        return weekly_amount;
+    }
 
-
-
+    public double average() {
+        return total()/7;
+    }
 
     @Override
     public String toString() {
