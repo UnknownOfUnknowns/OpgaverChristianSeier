@@ -14,7 +14,7 @@ public class Transactions {
 
         acct1.deposit(25.85);
 
-        Account acct5 = new Account("Christian", 11477);
+        Account acct5 = new Account("Christian", 14141, 1000000);
         System.out.println(acct5);
 
         double smithBalance = acct2.deposit(500.00);

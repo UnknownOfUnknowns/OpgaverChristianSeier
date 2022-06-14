@@ -19,7 +19,6 @@ public class Account {
         this.name = name;
         this.acctNumber = acctNumber;
         balance = 0;
-
     }
 
     public double deposit(double amount) {
