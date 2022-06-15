@@ -13,7 +13,8 @@ public class Transactions {
         System.out.println(acct4);
 
         acct1.deposit(25.85);
-
+        acct4.deposit("5.09");
+        acct2.deposit(3.0, 9.6);
         Account acct5 = new Account("Christian", 14141, 1000000);
         System.out.println(acct5);
 

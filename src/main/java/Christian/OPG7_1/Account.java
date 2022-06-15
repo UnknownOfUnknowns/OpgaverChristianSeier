@@ -10,7 +10,6 @@ public class Account {
     private String name;
 
     public Account(String owner, long account, double initial) {
-
         name = owner;
         acctNumber = account;
         balance = initial;
@@ -23,6 +22,16 @@ public class Account {
 
     public double deposit(double amount) {
         balance = balance + amount;
+        return balance;
+    }
+
+    public double deposit(double amount, double amount2) {
+        balance = balance + amount + amount2;
+        return balance;
+    }
+
+    public double deposit(String amount){
+        balance = balance + Double.parseDouble(amount);
         return balance;
     }
 

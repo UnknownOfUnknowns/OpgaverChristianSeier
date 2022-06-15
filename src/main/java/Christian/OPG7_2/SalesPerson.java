@@ -33,10 +33,9 @@ public class SalesPerson {
         sale_amount[day] = amount;
     }
 
-
-
-
-
+    public String getName() {
+        return name;
+    }
 
     @Override
     public String toString() {
