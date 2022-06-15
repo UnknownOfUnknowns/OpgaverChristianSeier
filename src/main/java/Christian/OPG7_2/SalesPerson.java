@@ -48,6 +48,9 @@ public class SalesPerson {
     public double average() {
         return total()/7;
     }
+    public String getName() {
+        return name;
+    }
 
     @Override
     public String toString() {
