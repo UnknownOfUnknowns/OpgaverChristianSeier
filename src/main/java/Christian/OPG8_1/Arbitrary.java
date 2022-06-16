@@ -25,7 +25,6 @@ public class Arbitrary {
             System.out.println(number);
         }
     }
-    }
 
 
 
