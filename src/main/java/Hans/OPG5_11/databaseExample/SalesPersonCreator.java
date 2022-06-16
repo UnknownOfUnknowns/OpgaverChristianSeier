@@ -1,6 +1,7 @@
 package Hans.OPG5_11.databaseExample;
 
 import Christian.OPG7_2.SalesPerson;
+import Christian.OPG_7_3.SalesTeam;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +11,10 @@ import java.util.ArrayList;
 
 public class SalesPersonCreator {
     public static void main(String[] args) throws SQLException {
+        SalesTeam salesTeam = new SalesTeam("Hundige");
+
         for(SalesPerson salesPerson : createSalesPersons())
-         System.out.println(salesPerson);
+         salesTeam.addSalesPerson(salesPerson);
     }
     private static ArrayList<SalesPerson> createSalesPersons() throws SQLException {
         Connector connector = new Connector();
