@@ -26,8 +26,8 @@ public class SalesTeam {
 
     public void weeklyReport() {
         for (SalesPerson salesPerson : salesPersons) {
-            System.out.println(salesPerson.getName() + salesPerson.total());
+            System.out.println(salesPerson.getName() + " " + salesPerson.total());
         }
-        System.out.println("total for districtet " + total());
+        System.out.println("total for " + teamName + " districtet " + total());
     }
 }
