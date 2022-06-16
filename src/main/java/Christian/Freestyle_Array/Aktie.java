@@ -14,8 +14,13 @@ public class Aktie {
     }
 
     public double maksKurs() {
-        double højesteKurs = Collections.max(historiskeAktieKurser);
-        return højesteKurs;
+        double højkurs = 0;
+        for(Double aktie : historiskeAktieKurser) {
+            if (aktie > højkurs) {
+                højkurs = aktie;
+            }
+        }
+        return højkurs;
     }
     public double lavestKurs() {
         double lavesteKurs = Collections.min(historiskeAktieKurser);
