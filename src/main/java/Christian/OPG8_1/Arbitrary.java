@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Arbitrary {
 
     public ArrayList<Integer> numbers = new ArrayList<>();
-    int min_range = 0;
-    int max_range = 50;
+    int min_range = -25;
+    int max_range = 25;
     Scanner input = new Scanner(System.in);
 
     public void insertNumber() {
@@ -21,8 +21,19 @@ public class Arbitrary {
 
         } while (true);
 
-        for (Integer number : numbers) {
-            System.out.println(number);
+        for (int i = 0; i < numbers.size(); i++) {
+            Integer number = numbers.get(i);
+
+            if(!numbers.subList(0, i).contains(number)) {
+                int count = 0;
+                for (Integer num : numbers) {
+                    if(num.equals(number)) {
+                        count++;
+                    }
+                }
+                System.out.println("nummer:" + number + ", " + count + "times");
+            }
+
         }
     }
 
