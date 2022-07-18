@@ -1,4 +1,6 @@
-package Christian;
+package Christian.OPG8_10;
+
+import Christian.OPG8_10.Complexity;
 
 public class Question implements Complexity {
     private String question, answer;
