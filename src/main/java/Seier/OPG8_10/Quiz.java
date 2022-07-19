@@ -10,23 +10,44 @@ public class Quiz {
 
     }
 
-    public void questionsadd(Question question){
+    public void questionsadd(Question question) {
         questions.add(question);
     }
-    public void giveQuiz (){
+
+    public void giveQuiz() {
         int point = 0;
-        for(int i = 0; i < questions.size(); i++) {
+        for (int i = 0; i < questions.size(); i++) {
             System.out.println(questions.get(i).getQuestion());
 
             Scanner scan = new Scanner(System.in);
             String answer = scan.next();
-            if(questions.get(i).answerCorrect(answer)){
+            if (questions.get(i).answerCorrect(answer)) {
                 point += 1;
             }
             System.out.println("point efter denne runde " + point);
         }
         System.out.println("spilleren har: " + point + " Point" + " ud af " + questions.size() + " spørgsmål");
 
-        }
+
     }
+
+    public void giveQuiz(int complexity) {
+        int point = 0;
+
+        for (int i = 0; i < questions.size(); i++) {
+            if (complexity!=questions.get(i).getComplexity()){
+                continue;
+            }
+            System.out.println(questions.get(i).getQuestion());
+
+            Scanner scan = new Scanner(System.in);
+            String answer = scan.next();
+            if (questions.get(i).answerCorrect(answer)) {
+                point += 1;
+            }
+            System.out.println("point efter denne runde " + point);
+        }
+        System.out.println("spilleren har: " + point + " Point" + " ud af " + questions.size() + " spørgsmål");
+    }
+}
 
