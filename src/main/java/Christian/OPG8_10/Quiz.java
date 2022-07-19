@@ -28,5 +28,25 @@ public class Quiz {
         System.out.println("spilleren har: " + point + " Point" + " ud af " + questions.size() + " spørgsmål");
 
         }
+    public void giveQuiz(int min, int max) {
+        int point = 0;
+        int number_questions = 0;
+        for(int i = 0; i < questions.size(); i++) {
+            Question spørgsmål = questions.get(i);
+            if (spørgsmål.getComplexity() >= min && spørgsmål.getComplexity() <= max) {
+                System.out.println(spørgsmål.getQuestion());
+
+                Scanner scan = new Scanner(System.in);
+                String answer = scan.next();
+                if (spørgsmål.answerCorrect(answer)) {
+                    point += 1;
+                }
+                number_questions++;
+                System.out.println("point efter denne runde " + point);
+            }
+        }
+            System.out.println("spilleren har: " + point + " Point" + " ud af " + number_questions + " spørgsmål");
+
+    }
     }
 

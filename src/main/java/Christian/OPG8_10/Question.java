@@ -11,7 +11,11 @@ public class Question implements Complexity {
         answer = result;
         complexitylevel = 1;
     }
-
+    public Question(String query, String result, int complexitylevel) {
+        question = query;
+        answer = result;
+        this.complexitylevel = complexitylevel;
+    }
     public void setComplexity(int level) {
         complexitylevel = level;
     }
