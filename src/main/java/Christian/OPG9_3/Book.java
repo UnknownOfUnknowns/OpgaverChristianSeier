@@ -1,10 +1,10 @@
 package Christian.OPG9_3;
 
-public class Books {
+public class Book {
     String book_name, type, primary_character;
     int numbers_page;
 
-    public Books(String book_name, String type, String primary_character, int numbers_page) {
+    public Book(String book_name, String type, String primary_character, int numbers_page) {
         this.book_name = book_name;
         this.type = type;
         this.primary_character = primary_character;
