@@ -1,6 +1,4 @@
-package Christian.OPG8_10;
-
-import Christian.OPG8_10.Complexity;
+package Seier.OPG8_10;
 
 public class Question implements Complexity {
     private String question, answer;
@@ -11,11 +9,14 @@ public class Question implements Complexity {
         answer = result;
         complexitylevel = 1;
     }
-    public Question(String query, String result, int complexitylevel) {
+
+    public Question (String query, String result, int complexitylevel){
         question = query;
         answer = result;
         this.complexitylevel = complexitylevel;
     }
+
+
     public void setComplexity(int level) {
         complexitylevel = level;
     }
