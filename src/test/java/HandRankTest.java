@@ -53,7 +53,7 @@ public class HandRankTest {
                 new Card(Suit.Clubs, Value.NINE)
         };
         Hand hand = new Hand(card);
-        assertEquals(hand.calculateRank(), Ranking.FOUROFAKIND);
+        assertEquals(Ranking.FOUROFAKIND ,hand.calculateRank());
     }
     @Test
     public void FullHouse() {
@@ -65,7 +65,7 @@ public class HandRankTest {
                 new Card(Suit.Clubs, Value.NINE)
         };
         Hand hand = new Hand(card);
-        assertEquals(hand.calculateRank(), Ranking.FULLHOUSE);
+        assertEquals(Ranking.FULLHOUSE, hand.calculateRank());
     }
     @Test
     public void NotFourOfaKind(){

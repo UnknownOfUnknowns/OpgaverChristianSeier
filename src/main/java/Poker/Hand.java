@@ -33,16 +33,16 @@ public class Hand {
             }
         }
         //FourOfKind
-        for (int i=0; i<3; i++) {
-            if (cards[i].value.numberValue == cards[i+1].value.numberValue ||
-                    cards[i+1].value.numberValue == cards[i+2].value.numberValue){
-                if (i == 2){
+        int count = 0;
+        for (int i=0; i<4; i++) {
+            if (cards[i].value.numberValue == cards[i+1].value.numberValue){
+                count++;
+                if (count == 4){
                     return Ranking.FOUROFAKIND;
                 }
-            } else {
-                break;
+                }
             }
-        }
+
         //FullHouse
             if(cards[0].value.numberValue == cards[1].value.numberValue &&
                     cards[0].value.numberValue == cards[2].value.numberValue) {
