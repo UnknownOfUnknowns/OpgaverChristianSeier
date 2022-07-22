@@ -55,5 +55,17 @@ public class HandRankTest {
         Hand hand = new Hand(card);
         assertEquals(hand.calculateRank(), Ranking.FOUROFAKIND);
     }
+    @Test
+    public void FullHouse() {
+        Card[] card = new Card[]{
+                new Card(Suit.Diamonds, Value.NINE),
+                new Card(Suit.Hearths, Value.QUEEN),
+                new Card(Suit.Clubs, Value.QUEEN),
+                new Card(Suit.Spades, Value.NINE),
+                new Card(Suit.Clubs, Value.NINE)
+        };
+        Hand hand = new Hand(card);
+        assertEquals(hand.calculateRank(), Ranking.FULLHOUSE);
+    }
 
 }

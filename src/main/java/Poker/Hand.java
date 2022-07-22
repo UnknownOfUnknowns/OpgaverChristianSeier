@@ -12,7 +12,7 @@ public class Hand {
     }
 
     public Ranking calculateRank(){
-
+        //RoyalStraightFlush
         if (cards[0].value.numberValue == 10 && cards[1].value.numberValue == 11 && cards[2].value.numberValue == 12
                 && cards[3].value.numberValue == 13 && cards[4].value.numberValue == 14) {
             if(cards[0].suit == cards[1].suit && cards[1].suit == cards[2].suit && cards[2].suit == cards[3].suit
@@ -32,6 +32,7 @@ public class Hand {
                     }
             }
         }
+        //FourOfKind
         for (int i=0; i<3; i++) {
             if (cards[i].value.numberValue == cards[i+1].value.numberValue ||
                     cards[i+1].value.numberValue == cards[i+2].value.numberValue){
@@ -41,8 +42,21 @@ public class Hand {
             } else {
                 break;
             }
-
         }
+        //FullHouse
+            if(cards[0].value.numberValue == cards[1].value.numberValue &&
+                    cards[0].value.numberValue == cards[2].value.numberValue) {
+                if (cards[3].value.numberValue == cards[4].value.numberValue) {
+                    return Ranking.FULLHOUSE;
+                }
+            }
+            if(cards[0].value.numberValue == cards[1].value.numberValue) {
+                if (cards[2].value.numberValue == cards[3].value.numberValue &&
+                        cards[2].value.numberValue == cards[4].value.numberValue){
+                    return Ranking.FULLHOUSE;
+                }
+            }
+
         return Ranking.HIGHCARD;
     }
 
