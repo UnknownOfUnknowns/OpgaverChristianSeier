@@ -67,5 +67,17 @@ public class HandRankTest {
         Hand hand = new Hand(card);
         assertEquals(hand.calculateRank(), Ranking.FULLHOUSE);
     }
+    @Test
+    public void NotFourOfaKind(){
+        Card[] card = new Card[]{
+                new Card(Suit.Diamonds, Value.NINE),
+                new Card(Suit.Hearths, Value.NINE),
+                new Card(Suit.Clubs, Value.QUEEN),
+                new Card(Suit.Spades, Value.NINE),
+                new Card(Suit.Clubs, Value.SEVEN)
+        };
+        Hand hand = new Hand(card);
+        assertNotEquals(hand.calculateRank(), Ranking.FOUROFAKIND);
+    }
 
 }
